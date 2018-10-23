@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- font CSS -->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="css/font.css" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="css/table-style.css" />
+<link rel="stylesheet" type="text/css" href="css/basictable.css" />
+<!-- //font-awesome icons -->
+<script src="js/jquery2.0.3.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/screenfull.js"></script>
+<script type="text/javascript" src="js/jquery.basictable.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#table').basictable();
+
+      $('#table-breakpoint').basictable({
+        breakpoint: 768
+      });
+
+      $('#table-swap-axis').basictable({
+        swapAxis: true
+      });
+
+      $('#table-force-off').basictable({
+        forceResponsive: false
+      });
+
+      $('#table-no-resize').basictable({
+        noResize: true
+      });
+
+      $('#table-two-axis').basictable();
+
+      $('#table-max-height').basictable({
+        tableWrapper: true
+      });
+    });
+</script>
+		<script>
+		$(function () {
+			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+			if (!screenfull.enabled) {
+				return false;
+			}
+
+			
+
+			$('#toggle').click(function () {
+				screenfull.toggle($('#container')[0]);
+			});	
+		});
+		</script>
+<!-- charts -->
+<script src="js/raphael-min.js"></script>
+<script src="js/morris.js"></script>
+<link rel="stylesheet" href="css/morris.css">
+<!-- //charts -->
+<!--skycons-icons-->
+<script src="js/skycons.js"></script>
+<!--//skycons-icons-->
+</head>
+<body class="dashboard-page">
+	<script>
+	        var theme = $.cookie('protonTheme') || 'default';
+	        $('body').removeClass (function (index, css) {
+	            return (css.match (/\btheme-\S+/g) || []).join(' ');
+	        });
+	        if (theme !== 'default') $('body').addClass(theme);
+        </script>
+	<nav class="main-menu">
+		<ul>
+			<li>
+				<a href="index.html">
+					<i class="fa fa-home nav_icon"></i>
+					<span class="nav-text">
+					Dashboard
+					</span>
+				</a>
+			</li>
+			
+			<li class="has-subnav">
+				<a href="javascript:;">
+					<i class="fa fa-file-text-o nav_icon"></i>
+						<span class="nav-text">Past Questions</span>
+					<i class="icon-angle-right"></i><i class="icon-angle-down"></i>
+				</a>
+				<ul>
+					<li>
+						<a class="subnav-text" href="waec.html">
+							WAEC
+						</a>
+					</li>
+					<li>
+						<a class="subnav-text" href="gce.html">
+							GCE
+						</a>
+					</li>
+					<li>
+						<a class="subnav-text" href="neco.html">
+							NECO
+						</a>
+					</li>
+					<li>
+						<a class="subnav-text" href="jamb.html">
+							JAMB
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="charts.html">
+					<i class="fa fa-bar-chart nav_icon"></i>
+					<span class="nav-text">
+						Charts
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="Books.html">
+					<i class="icon-font nav-icon"></i>
+					<span class="nav-text">
+					Text Books
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="studyplanner.html">
+					<i class="icon-table nav-icon"></i>
+					<span class="nav-text">
+					Study Planner
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="results.html">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<span class="nav-text">
+					Results
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="records.html">
+					<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+					<span class="nav-text">
+					Records
+					</span>
+				</a>
+			</li>
+			
+		</ul>
+		<ul class="logout">
+			<li>
+			<a href="login.html">
+			<i class="icon-off nav-icon"></i>
+			<span class="nav-text">
+			Logout
+			</span>
+			</a>
+			</li>
+		</ul>
+	</nav>
+	<section class="wrapper scrollable">
+		<nav class="user-menu">
+			<a href="javascript:;" class="main-menu-access">
+			<i class="icon-proton-logo"></i>
+			<i class="icon-reorder"></i>
+			</a>
+		</nav>
+		<section class="title-bar">
+			<div class="logo">
+				<h1><a href="index.html"><img src="images/logo.png" alt="" />Colored</a></h1>
+			</div>
+			<div class="full-screen">
+				<section class="full-top">
+					<button id="toggle"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>	
+				</section>
+			</div>
+				
+					
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</section>
+
+		
+		<div class="main-grid">
+			<div class="agile-tables">
+					<div class="w3l-table-info">
+					  <h3>Basic Implementation</h3>
+					    <table id="table">
+						<thead>
+						  <tr>
+							<th>Subject</th>
+							<th>Year</th>
+							
+							
+							
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>Mathematics</td>
+							<td><a href="math.html">2015-2017</a></td>
+							
+						  </tr>
+						  <tr>
+							<td>English Language</td>
+							<td><a href="math.html">2015-2017</a></td>
+							
+						  </tr>
+						  <tr>
+							<td>Further Mathematics</td>
+							<td><a href="math.html">2015-2017</a></td>
+							
+						  </tr>
+
+						  <tr>
+							<td>Government</td>
+							<td><a href="math.html">2015-2017</a></td>
+							
+						  </tr>
+
+						  <tr>
+							<td>History</td>
+							<td><a href="math.html">2015-2017</a></td>
+							
+						  </tr>
+
+						  <tr>
+							<td>Commerce</td>
+							<td><a href="math.html">2015-2017</a></td>
+							
+						  </tr>
+
+						  <tr>
+							<td>Physics</td>
+							<td><a href="math.html">2015-2017</a></td>
+							
+						  </tr>
+
+						  <tr>
+							<td>Chemistry</td>
+							<td><a href="math.html">2015-2017</a></td>
+							
+						  </tr>
+
+						  <tr>
+							<td>Biology</td>
+							<td><a href="math.html">2015-2017</a></td>
+							
+						  </tr>
+						  
+						</tbody>
+					  </table>
+					</div>
+				  
+			
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		</div>
+	
+	
+		<!-- footer -->
+		<div class="footer">
+			<p>© 2016 Colored . All Rights Reserved . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		</div>
+		<!-- //footer -->
+	</section>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/proton.js"></script>
+</body>
+</html>
